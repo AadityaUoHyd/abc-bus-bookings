@@ -1,0 +1,9 @@
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .print\:break-after-page {
+    page-break-after: always;
+  }
+}

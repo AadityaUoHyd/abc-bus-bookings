@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+    --background: #f8fafc;            /* Soft light blue-gray background */
+    --foreground: #0f172a;            /* Slate-900 text */
+    --primary: #1d4ed8;               /* Blue-700 for primary elements */
+    --primary-foreground: #ffffff;    /* White text on primary buttons */
+    --secondary: #cbd5e1;             /* Slate-300 for secondary elements */
+    --secondary-foreground: #1e293b;  /* Slate-800 text */
+    --accent: #e2e8f0;                /* Slate-200 accent */
+    --accent-foreground: #0f172a;     /* Slate-900 text */
+    --muted: #94a3b8;                 /* Slate-400 muted borders */
+    --muted-foreground: #64748b;      /* Slate-500 text */
+    --card: #ffffff;                  /* White card background */
+    --card-foreground: #0f172a;       /* Slate-900 card text */
+  }
+
+  .dark {
+    --background: #111827;
+    --foreground: #f9fafb;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #374151;
+    --secondary-foreground: #d1d5db;
+    --accent: #1f2937;
+    --accent-foreground: #f9fafb;
+    --muted: #4b5563;
+    --muted-foreground: #9ca3af;
+    --card: #1f2937;
+    --card-foreground: #f9fafb;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-200;
+  }
+
+  * {
+    @apply border-[var(--muted)];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-blue-800 dark:hover:bg-blue-600 rounded-lg transition duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary)];
+  }
+  .btn-secondary {
+    @apply bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-slate-400 dark:hover:bg-gray-500 rounded-lg transition duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-[var(--secondary)];
+  }
+  .card {
+    @apply bg-[var(--card)] text-[var(--card-foreground)] rounded-2xl shadow-xl transition-colors duration-200;
+  }
+  .header {
+    @apply bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-colors duration-200;
+  }
+}
+
+/* src/index.css */
+.Toastify__toast {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 1rem;
+    min-height: 60px;
+    background: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--muted);
+    transition: all 0.3s ease-in-out;
+}
