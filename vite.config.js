@@ -10,5 +10,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', // Ensure build output goes to dist
+    assetsDir: 'assets',
   },
 });
