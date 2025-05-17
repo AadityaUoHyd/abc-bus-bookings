@@ -4,6 +4,8 @@ offering a seamless user experience with features like user authentication, seat
 and an admin dashboard. Built with React, Django, PostgreSQL, and Tailwind CSS, it provides a modern, responsive 
 interface and robust backend functionality. This Repository consist React frontend source code.
 
+![](https://github.com/AadityaUoHyd/abc-bus-bookings/blob/main/Screenshot.png)
+
 # Frontend Project Structure
 ```
 abc-bus-bookings/
