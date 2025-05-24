@@ -7,6 +7,7 @@ export default defineConfig({
   base: '/', // Ensures correct asset paths in production
   server: {
     port: 5173,
+    historyApiFallback: true 
   },
   build: {
     outDir: 'dist', // Ensure build output goes to dist
