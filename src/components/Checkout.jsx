@@ -232,16 +232,18 @@ const Checkout = ({ token }) => {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-[var(--background)] text-[var(--foreground)]"
-      style={{
+      <div
+        className="min-h-screen flex items-center justify-center bg-[var(--background)] text-[var(--foreground')] bg-cover bg-center"
+        style={{
         backgroundImage: `url(${payImage})`,
+        backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)',
-      }}
-    >
+        }}
+      >
+
       <ToastContainer
         position="top-right"
         autoClose={3000}
