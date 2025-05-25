@@ -10,6 +10,7 @@ import Stop from '../assets/stop.png';
 import Man from '../assets/man.png';
 import Woman from '../assets/woman.png';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import logo from '../assets/logo.png'; 
 
 
 const BusList = ({ token, onSelectBus }) => {
@@ -115,13 +116,21 @@ const BusList = ({ token, onSelectBus }) => {
     const uniqueOrigins = [...new Set(buses.map(bus => bus.origin))];
     const uniqueDestinations = [...new Set(buses.map(bus => bus.destination))];
 
+    
+
     if (isLoading) {
-        return (
-            <div className="flex justify-center items-center min-h-screen">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--primary)]"></div>
-            </div>
-        );
+    return (
+        <div className="flex justify-center items-center min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+        <img
+            src={logo}
+            alt="Loading..."
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 animate-spin"
+        />
+        <span className="sr-only">Loading...</span>
+        </div>
+    );
     }
+
 
     if (error) {
         return (
