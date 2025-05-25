@@ -8,6 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { format, startOfDay } from 'date-fns';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../components/Loading'; 
 
 const BusSeats = ({ token }) => {
   const { theme } = useContext(ThemeContext);
@@ -161,11 +162,7 @@ const BusSeats = ({ token }) => {
   const totalPrice = Math.max(0, subtotal + gstAmount - discount);
 
   if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen bg-[var(--background)]">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {

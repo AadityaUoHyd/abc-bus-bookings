@@ -14,6 +14,7 @@ import {
 import Logo from '../assets/logo.png';
 import History from '../assets/history.jpg';
 import { ThemeContext } from '../components/ThemeContext';
+import Loading from '../components/Loading';
 
 const MyBookingHistory = ({ token }) => {
   const { theme } = useContext(ThemeContext);
@@ -51,11 +52,7 @@ const MyBookingHistory = ({ token }) => {
   }, [token, userId]);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen bg-[var(--background)]">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import BusImage from '../assets/bus.png';
 import Header from '../assets/header.jpg';
+import Loading from './Loading';
 import {
   FaMapMarkerAlt,
   FaFlagCheckered,
@@ -71,11 +72,7 @@ const UserBookings = ({ token, userId }) => {
   }, [token, userId]);
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--primary)]"></div>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {

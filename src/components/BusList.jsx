@@ -10,7 +10,7 @@ import Stop from '../assets/stop.png';
 import Man from '../assets/man.png';
 import Woman from '../assets/woman.png';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import logo from '../assets/logo.png'; 
+import Loading from '../components/Loading'; 
 
 
 const BusList = ({ token, onSelectBus }) => {
@@ -119,16 +119,7 @@ const BusList = ({ token, onSelectBus }) => {
     
 
     if (isLoading) {
-    return (
-        <div className="flex justify-center items-center min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-        <img
-            src={logo}
-            alt="Loading..."
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 animate-spin"
-        />
-        <span className="sr-only">Loading...</span>
-        </div>
-    );
+        return <Loading />;
     }
 
 
