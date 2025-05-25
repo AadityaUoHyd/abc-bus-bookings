@@ -17,9 +17,13 @@ const Checkout = ({ token }) => {
   const { selectedSeats, travelDate, bus, seats } = location.state || {};
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [confirmAction, setConfirmAction] = useState(null);
-  
+  const paymentSummaryRef = useRef(null);
 
   const URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
 
   // Validate required data
@@ -261,8 +265,8 @@ const Checkout = ({ token }) => {
         title="Cancel Booking"
         message="Are you sure you want to cancel and return to seat selection? Your selected seats will not be reserved."
       />
-      
-      <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg max-w-md w-full">
+
+      <div ref={paymentSummaryRef} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg max-w-md w-full">
         <h3 className="text-lg font-semibold text-gray-800 dark:text-blue-500 mb-4">
           Payment Summary
         </h3>

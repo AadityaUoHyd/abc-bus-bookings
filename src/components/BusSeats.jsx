@@ -349,8 +349,8 @@ const BusSeats = ({ token }) => {
             <h2 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200">
               Select Your Seats
             </h2>
-
             
+
             {selectedSeats.length > 0 && (
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
                 <p className="flex items-center text-black dark:text-gray-300 text-base sm:text-lg">
@@ -365,9 +365,7 @@ const BusSeats = ({ token }) => {
               </div>
             )}
 
-
           </div>
-
           {bus?.suspended ? (
             <div className="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-6 py-4 rounded-lg flex items-center">
               <svg
