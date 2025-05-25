@@ -20,6 +20,7 @@ import {
     FaPhone,
     FaUndo,
     FaAutoprefixer,
+    FaWhatsapp,
 } from 'react-icons/fa';
 import { ThemeContext } from './ThemeContext';
 
@@ -584,6 +585,17 @@ const Wrapper = ({ token, handleLogout, children }) => {
             >
               <FaLinkedin className="mr-2" />
               LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://api.whatsapp.com/send?phone=919999999999&text=Hi%20ABC%20Bus%20Bookings%2C%20I%27m%20interested%20in%20booking%20a%20bus.%20Please%20share%20details."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center"
+            >
+              <FaWhatsapp className="mr-2" />
+              WhatsApp
             </a>
           </li>
         </ul>

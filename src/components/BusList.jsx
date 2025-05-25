@@ -9,6 +9,7 @@ import Main2 from '../assets/main2.png';
 import Stop from '../assets/stop.png';
 import Man from '../assets/man.png';
 import Woman from '../assets/woman.png';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 
 const BusList = ({ token, onSelectBus }) => {
@@ -286,30 +287,26 @@ const BusList = ({ token, onSelectBus }) => {
                     {filteredBuses.length > busesPerPage && (
                     
                     <div className="flex justify-center items-center mt-6 space-x-2 sm:space-x-1">
-  <button
-    onClick={() => handlePageChange(currentPage - 1)}
-    disabled={currentPage === 1}
-    className={`btn-secondary p-2 sm:p-1.5 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition duration-200`}
-    aria-label="Previous page"
-  >
-    <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-    </svg>
-  </button>
-  <span className="text-sm sm:text-xs font-medium text-[var(--foreground)]">
-    Page {currentPage} of {totalPages}
-  </span>
-  <button
-    onClick={() => handlePageChange(currentPage + 1)}
-    disabled={currentPage === totalPages}
-    className={`btn-secondary p-2 sm:p-1.5 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition duration-200`}
-    aria-label="Next page"
-  >
-    <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-    </svg>
-  </button>
-</div>
+                        <button
+                            onClick={() => handlePageChange(currentPage - 1)}
+                            disabled={currentPage === 1}
+                            className={`btn-secondary p-2 sm:p-1.5 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition duration-200`}
+                            aria-label="Previous page"
+                        >
+                            <FaChevronLeft className="w-5 h-5 sm:w-4 sm:h-4" />
+                        </button>
+                        <span className="text-sm sm:text-xs font-medium text-[var(--foreground)]">
+                            Page {currentPage} of {totalPages}
+                        </span>
+                        <button
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                            className={`btn-secondary p-2 sm:p-1.5 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition duration-200`}
+                            aria-label="Next page"
+                        >
+                            <FaChevronRight className="w-5 h-5 sm:w-4 sm:h-4" />
+                        </button>
+                    </div>
 
 
 
