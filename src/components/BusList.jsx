@@ -284,50 +284,35 @@ const BusList = ({ token, onSelectBus }) => {
                         ))}
                     </div>
                     {filteredBuses.length > busesPerPage && (
-                    <div className="flex justify-center items-center mt-8 space-x-2 flex-wrap sm:space-x-1">
-                        <button
-                            onClick={() => handlePageChange(1)}
-                            disabled={currentPage === 1}
-                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            First
-                        </button>
-                        <button
-                            onClick={() => handlePageChange(currentPage - 1)}
-                            disabled={currentPage === 1}
-                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            Previous
-                        </button>
-                        {Array.from({ length: totalPages }, (_, index) => index + 1)
-                            .filter(page => {
-                            const maxButtons = window.innerWidth < 640 ? 3 : 5; // Show 3 buttons on mobile, 5 on larger
-                            return page >= currentPage - Math.floor(maxButtons / 2) && page <= currentPage + Math.floor(maxButtons / 2);
-                            })
-                            .map(page => (
-                            <button
-                                key={page}
-                                onClick={() => handlePageChange(page)}
-                                className={`btn-primary py-2 px-4 sm:px-2 font-medium ${currentPage === page ? 'bg-[var(--primary)] text-white' : 'bg-[var(--background)] text-[var(--foreground)]'}`}
-                            >
-                                {page}
-                            </button>
-                            ))}
-                        <button
-                            onClick={() => handlePageChange(currentPage + 1)}
-                            disabled={currentPage === totalPages}
-                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            Next
-                        </button>
-                        <button
-                            onClick={() => handlePageChange(totalPages)}
-                            disabled={currentPage === totalPages}
-                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        >
-                            Last
-                        </button>
-                    </div>
+                    
+                    <div className="flex justify-center items-center mt-6 space-x-2 sm:space-x-1">
+  <button
+    onClick={() => handlePageChange(currentPage - 1)}
+    disabled={currentPage === 1}
+    className={`btn-secondary p-2 sm:p-1.5 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition duration-200`}
+    aria-label="Previous page"
+  >
+    <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+  <span className="text-sm sm:text-xs font-medium text-[var(--foreground)]">
+    Page {currentPage} of {totalPages}
+  </span>
+  <button
+    onClick={() => handlePageChange(currentPage + 1)}
+    disabled={currentPage === totalPages}
+    className={`btn-secondary p-2 sm:p-1.5 rounded-full disabled:opacity-50 disabled:cursor-not-allowed transition duration-200`}
+    aria-label="Next page"
+  >
+    <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>
+
+
+
                     )}
                 </>
             )}
