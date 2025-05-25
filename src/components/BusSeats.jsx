@@ -350,8 +350,8 @@ const BusSeats = ({ token }) => {
 
             {selectedSeats.length > 0 && (
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
-                <p className="flex items-center text-black dark:text-gray-300 text-base sm:text-lg">
-                  <span className="font-medium">Amount = </span> ₹{totalPrice.toFixed(2)}
+                <p className="flex items-center text-blue-600 dark:text-blue-400 text-base sm:text-lg">
+                  <span className="font-medium ">Amount </span> ₹{totalPrice.toFixed(2)}
                 </p>
                 <button
                   onClick={handleProceedToCheckout}
