@@ -442,179 +442,164 @@ const Wrapper = ({ token, handleLogout, children }) => {
                 {children}
             </main>
 
-            <footer className="bg-gray-800 dark:bg-gray-950 text-white dark:text-gray-200">
-                <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">ABC Bus Bookings</h3>
-                            <div className="flex items-center space-x-6">
-                                <a href="/">
-                                    <img src={Logo} alt="ABC Bus Bookings Logo" className="h-12 w-auto" />
-                                </a>
-                                <a
-                                    href="/offers"
-                                    className="gradient-glow-button text-black hover:text-white font-semibold px-6 py-3 rounded-md shadow-md animate-pulse"
-                                    style={{
-                                        height: '48px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
 
-                                    }}
-                                >
-                                    Offers
-                                </a>
-                                <style>{`
-                                    @keyframes bgPulse {
-                                        0% {
-                                            background: linear-gradient(90deg, #3b82f6, #ffffff);
-                                        }
-                                        50% {
-                                            background: linear-gradient(90deg, #ffffff, #8b5cf6);
-                                        }
-                                        100% {
-                                            background: linear-gradient(90deg, #3b82f6, #ffffff);
-                                        }
-                                    }
 
-                                    .gradient-glow-button {
-                                        animation: bgPulse 5s ease-in-out infinite;
-                                        box-shadow: 0 0 10px rgba(91, 33, 182, 0.5), 0 0 20px rgba(59, 130, 246, 0.4);
-                                        background-size: 400% 400%;
-                                        transition: all 0.3s ease;
-                                    }
-                                `}</style>
-                            </div>
-                            <p className="text-gray-400 text-sm mt-2">
-                                Your trusted platform for hassle-free bus travel across the country.
-                            </p>
-                            <p className="text-gray-400 text-sm mt-2">
-                                Developed by -{' '}
-                                <span className="text-yellow-600 hover:text-blue-500">
-                                    <a href="https://www.linkedin.com/in/aaditya-bachchu-chatterjee-0485933b/">
-                                        Aaditya B Chatterjee
-                                    </a>
-                                </span>
-                                .
-                            </p>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                            <ul className="space-y-2 text-sm">
-                                <li>
-                                    <Link to="/" className="text-gray-400 hover:text-white">
-                                        Home
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/about" className="text-gray-400 hover:text-white">
-                                        About
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/customer-service" className="text-gray-400 hover:text-white">
-                                        Customer Service
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/cancellation-refund" className="text-gray-400 hover:text-white">
-                                        Cancellation & Refund
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/partners" className="text-gray-400 hover:text-white">
-                                        Our Partners
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Support</h3>
-                            <ul className="space-y-2 text-sm">
-                                <li>
-                                    <Link to="/faq" className="text-gray-400 hover:text-white">
-                                        FAQ
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/testimonials" className="text-gray-400 hover:text-white">
-                                        Testimonials
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/careers" className="text-gray-400 hover:text-white">
-                                        Careers
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/privacy" className="text-gray-400 hover:text-white">
-                                        Privacy Policy
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/our-team" className="text-gray-400 hover:text-white">
-                                        Our Team
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-                            <ul className="space-y-2 text-sm">
-                                <li>
-                                    <a
-                                        href="https://twitter.com/abcbusbookings"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white flex items-center"
-                                    >
-                                        <FaTwitter className="mr-2" />
-                                        Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://facebook.com/abcbusbookings"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white flex items-center"
-                                    >
-                                        <FaFacebook className="mr-2" />
-                                        Facebook
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://instagram.com/abcbusbookings"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white flex items-center"
-                                    >
-                                        <FaInstagram className="mr-2" />
-                                        Instagram
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="https://linkedin.com/company/abcbusbookings"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white flex items-center"
-                                    >
-                                        <FaLinkedin className="mr-2" />
-                                        LinkedIn
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="mt-8 border-t border-gray-700 pt-6">
-                        <p className="text-center text-gray-400 text-sm">
-                            © {new Date().getFullYear()} ABC Bus Bookings. All rights reserved.
-                        </p>
-                    </div>
-                </div>
-            </footer>
+<footer className="bg-gray-800 dark:bg-gray-950 text-white dark:text-gray-200">
+  <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center sm:text-center md:text-left">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="footer-column flex flex-col items-center md:items-start">
+        <h3 className="text-lg font-semibold mb-4">ABC Bus Bookings</h3>
+        <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <a href="/">
+            <img src={Logo} alt="ABC Bus Bookings Logo" className="h-12 w-auto" />
+          </a>
+          <a
+            href="/offers"
+            className="gradient-glow-button text-black hover:text-white font-semibold px-6 py-3 rounded-md shadow-md animate-pulse"
+            style={{
+              height: '48px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Offers
+          </a>
+        </div>
+        <p className="text-gray-400 text-sm mt-4">
+          Your trusted platform for hassle-free bus travel across the country.
+        </p>
+        <p className="text-gray-400 text-sm mt-2">
+          Developed by -{' '}
+          <span className="text-yellow-600 hover:text-blue-500">
+            <a href="https://www.linkedin.com/in/aaditya-bachchu-chatterjee-0485933b/">
+              Aaditya B Chatterjee
+            </a>
+          </span>
+          .
+        </p>
+      </div>
+      <div className="footer-column flex flex-col items-center md:items-start">
+        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <Link to="/" className="text-gray-400 hover:text-white">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="text-gray-400 hover:text-white">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/customer-service" className="text-gray-400 hover:text-white">
+              Customer Service
+            </Link>
+          </li>
+          <li>
+            <Link to="/cancellation-refund" className="text-gray-400 hover:text-white">
+              Cancellation & Refund
+            </Link>
+          </li>
+          <li>
+            <Link to="/partners" className="text-gray-400 hover:text-white">
+              Our Partners
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="footer-column flex flex-col items-center md:items-start">
+        <h3 className="text-lg font-semibold mb-4">Support</h3>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <Link to="/faq" className="text-gray-400 hover:text-white">
+              FAQ
+            </Link>
+          </li>
+          <li>
+            <Link to="/testimonials" className="text-gray-400 hover:text-white">
+              Testimonials
+            </Link>
+          </li>
+          <li>
+            <Link to="/careers" className="text-gray-400 hover:text-white">
+              Careers
+            </Link>
+          </li>
+          <li>
+            <Link to="/privacy" className="text-gray-400 hover:text-white">
+              Privacy Policy
+            </Link>
+          </li>
+          <li>
+            <Link to="/our-team" className="text-gray-400 hover:text-white">
+              Our Team
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="footer-column flex flex-col items-center md:items-end">
+        <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <a
+              href="https://twitter.com/abcbusbookings"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center"
+            >
+              <FaTwitter className="mr-2" />
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://facebook.com/abcbusbookings"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center"
+            >
+              <FaFacebook className="mr-2" />
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/abcbusbookings"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center"
+            >
+              <FaInstagram className="mr-2" />
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/company/abcbusbookings"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center"
+            >
+              <FaLinkedin className="mr-2" />
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div className="mt-8 border-t border-gray-700 pt-6">
+      <p className="text-center text-gray-400 text-sm">
+        © {new Date().getFullYear()} ABC Bus Bookings. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+
         </div>
     );
 };
