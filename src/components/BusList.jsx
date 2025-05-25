@@ -284,45 +284,50 @@ const BusList = ({ token, onSelectBus }) => {
                         ))}
                     </div>
                     {filteredBuses.length > busesPerPage && (
-                        <div className="flex justify-center items-center mt-8 space-x-2">
+                    <div className="flex justify-center items-center mt-8 space-x-2 flex-wrap sm:space-x-1">
+                        <button
+                            onClick={() => handlePageChange(1)}
+                            disabled={currentPage === 1}
+                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                            First
+                        </button>
+                        <button
+                            onClick={() => handlePageChange(currentPage - 1)}
+                            disabled={currentPage === 1}
+                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                            Previous
+                        </button>
+                        {Array.from({ length: totalPages }, (_, index) => index + 1)
+                            .filter(page => {
+                            const maxButtons = window.innerWidth < 640 ? 3 : 5; // Show 3 buttons on mobile, 5 on larger
+                            return page >= currentPage - Math.floor(maxButtons / 2) && page <= currentPage + Math.floor(maxButtons / 2);
+                            })
+                            .map(page => (
                             <button
-                                onClick={() => handlePageChange(1)}
-                                disabled={currentPage === 1}
-                                className={`btn-secondary py-2 px-4 font-medium ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                key={page}
+                                onClick={() => handlePageChange(page)}
+                                className={`btn-primary py-2 px-4 sm:px-2 font-medium ${currentPage === page ? 'bg-[var(--primary)] text-white' : 'bg-[var(--background)] text-[var(--foreground)]'}`}
                             >
-                                First
+                                {page}
                             </button>
-                            <button
-                                onClick={() => handlePageChange(currentPage - 1)}
-                                disabled={currentPage === 1}
-                                className={`btn-secondary py-2 px-4 font-medium ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            >
-                                Previous
-                            </button>
-                            {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-                                <button
-                                    key={page}
-                                    onClick={() => handlePageChange(page)}
-                                    className={`btn-primary py-2 px-4 font-medium ${currentPage === page ? 'bg-[var(--primary)] text-white' : 'bg-[var(--background)] text-[var(--foreground)]'}`}
-                                >
-                                    {page}
-                                </button>
                             ))}
-                            <button
-                                onClick={() => handlePageChange(currentPage + 1)}
-                                disabled={currentPage === totalPages}
-                                className={`btn-secondary py-2 px-4 font-medium ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            >
-                                Next
-                            </button>
-                            <button
-                                onClick={() => handlePageChange(totalPages)}
-                                disabled={currentPage === totalPages}
-                                className={`btn-secondary py-2 px-4 font-medium ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            >
-                                Last
-                            </button>
-                        </div>
+                        <button
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                            Next
+                        </button>
+                        <button
+                            onClick={() => handlePageChange(totalPages)}
+                            disabled={currentPage === totalPages}
+                            className={`btn-secondary py-2 px-4 sm:px-2 font-medium ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                            Last
+                        </button>
+                    </div>
                     )}
                 </>
             )}
